@@ -86,10 +86,10 @@ app.post("/create-payment-intent", async (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.send("welcome to microsoftsupplier website");
-});
-app.get("https://miccspplier-backendd.adaptable.app/api/sendemail", (req, res) => {
+// app.get("/", (req, res) => {
+//   res.send("welcome to microsoftsupplier website");
+// });
+app.get("/api/sendemail", (req, res) => {
   res.send("welcome to microsoftsupplier website email");
 });
 
