@@ -51,7 +51,7 @@ const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const sendEmail = require("./Utils/sendEmail");
-const { v4: uuidv4 } = require("uuid");
+// const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 app.use(cors());
@@ -67,7 +67,7 @@ app.post("/create-payment-intent", async (req, res) => {
   const { items, price } = req.body;
 
   // Generate a unique identifier using uuid
-  const uniqueId = uuidv4();
+  // const uniqueId = uuidv4();
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(price),
@@ -76,9 +76,9 @@ app.post("/create-payment-intent", async (req, res) => {
       enabled: true,
     },
     items,
-    metadata: {
-      orderId: uniqueId, // Attach the unique identifier as m
-    },
+    // metadata: {
+    //   orderId: uniqueId, // Attach the unique identifier as m
+    // },
   });
 
   res.send({
