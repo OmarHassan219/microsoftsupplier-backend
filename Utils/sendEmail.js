@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
-  const transporter = nodemailer.createTransport('SMTP',{
+  const transporter = nodemailer.createTransport({
     service:"hotmail",
     // host: process.env.EMAIL_HOST,
     // port: 995,
