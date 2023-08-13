@@ -1,49 +1,3 @@
-// require("dotenv").config()
-// const express = require("express");
-// const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
-// const cors = require('cors');
-
-
-// const app = express();
-// app.use(cors())
-// app.use(express.json())
-// const calculateOrderAmount = (price) => {
-//     return price * 100;
-// };
-// app.post("/create-payment-intent", async (req, res) => {
-//   const { items , price  } = req.body;
-
-//   const paymentIntent = await stripe.paymentIntents.create({
-//     amount: calculateOrderAmount(price),
-//     currency: "eur",
-//     automatic_payment_methods: {
-//       enabled: true,
-//     },
-//     items,
-//   });
-
-//   res.send({
-//     clientSecret: paymentIntent.client_secret,
-//   });
-// });
-
-
-
-// app.get('/', (req, res) => {
-    
-//     res.send("welcome to microsoftsupplier website")
-    
-    
-    
-// })
-
-
-
-// const PORT = process.env.PORT || 4242
-
-// app.listen(PORT, () => console.log(`Node server listening on port ${PORT}`));
-
-
  
 require("dotenv").config();
 const express = require("express");
@@ -51,7 +5,6 @@ const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const sendEmail = require("./Utils/sendEmail");
-// const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 app.use(cors());
@@ -66,8 +19,7 @@ const calculateOrderAmount = (price) => {
 app.post("/create-payment-intent", async (req, res) => {
   const { items, price } = req.body;
 
-  // Generate a unique identifier using uuid
-  // const uniqueId = uuidv4();
+
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(price),
