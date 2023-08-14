@@ -57,11 +57,12 @@ try {
     const subject = `Asking reagarding buying `;
     const message = `
     <p>Dear MicrosoftSupplier team </p>
-    <p>Please click on reply to contact me regarding the GigaSupplier Plan:</p>
+    <p>Please click on reply to contact me regarding the <h5>GigaSupplier Plan<h5>:</p>
     <h5>My Email Address: </h5>
     <p>${email}</p>
     <h5>Company Name : </h5>
     <p>${companyName}</p>
+    <h5>message : </h5>
     <p>${messages}</p>
        
     `;
